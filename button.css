@@ -1,0 +1,105 @@
+/* CLASES GENERALES - ELEMENTOS */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 20px;
+}
+
+/* CLASES GENERALES DE BOTONES */
+
+/* BOTÓN PRINCIPAL */
+.solid-button {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-18);
+  line-height: 145%;
+  color: var(--color-white);
+  background-color: var(--color-blue);
+  padding: 12, 52;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  /* Esto sirve para que no varie el tamaño cuando sí tenga borde. Siempre que alguno de nuestros botones tenga border todos deberán llevarlo. Es mejor desglosar esas propiedades y que estén y cambies solo la necesaria.*/
+  outline: none;
+  text-decoration: none;
+  cursor: var(--cursor-pointer);
+  transition: all 0.1s ease-in;
+
+  &:hover {
+    background-color: var(--color-blue-light);
+  }
+
+  &:active {
+    background-color: var(--color-blue-dark);
+  }
+
+  &:disabled {
+    background-color: var(--color-grey);
+    cursor: not-allowed;
+  }
+}
+
+/* BOTÓN SECUNDARIO */
+.outline-button {
+  color: var(--color-blue);
+  border-color: currentColor;
+  background-color: unset;
+
+  &:hover {
+    background-color: unset;
+    color: var(--color-blue-light);
+  }
+
+  &:active {
+    background-color: unset;
+    color: var(--color-blue-dark);
+  }
+
+  &:disabled {
+    background-color: unset;
+    color: var(--color-grey);
+    cursor: var(--cursor-not-allowed);
+  }
+}
+
+/* BOTÓN TEXTO */
+.text-button {
+  color: var(--color-blue);
+  background-color: unset;
+  padding: 0px;
+  border-radius: 0px;
+  border: none;
+  outline: none;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-blue-light);
+    background-color: unset;
+  }
+
+  &:active {
+    color: var(--color-blue-dark);
+    background-color: unset;
+  }
+
+  &:disabled {
+    color: var(--color-grey);
+    background-color: unset;
+    cursor: not-allowed;
+  }
+}
+
+/* CLASES DE FLEX */
+/* Las he añadido para organizar así por encima el contenido de la web. */
+.btn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
